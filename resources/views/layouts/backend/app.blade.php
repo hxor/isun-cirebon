@@ -15,6 +15,8 @@
     <link href="{{ asset('assets/backend/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <!-- Responsive datatable examples -->
     <link href="{{ asset('assets/backend/vendor/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    {{--  Dropzone  --}}
+    <link href="{{ asset('assets/backend/vendor/dropzone-master/dist/dropzone.css') }}" rel="stylesheet" type="text/css" />
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/backend/css/sb-admin.css') }}" rel="stylesheet">
 </head>
@@ -54,6 +56,8 @@
         <!-- Responsive examples -->
         <script src="{{ asset('assets/backend/vendor/datatables/dataTables.responsive.min.js') }}"></script>
         <script src="{{ asset('assets/backend/vendor/datatables/responsive.bootstrap4.min.js') }}"></script>
+        <!-- Dropzone Plugin JavaScript -->
+        <script src="{{ asset('assets/backend/vendor/dropzone-master/dist/dropzone.js') }}"></script>    
         <!-- Custom scripts for all pages-->
         <script src="{{ asset('assets/backend/js/sb-admin.min.js') }}"></script>
         <!-- Custom scripts for this page-->

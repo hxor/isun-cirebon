@@ -81,4 +81,9 @@ class AgendaController extends Controller
     {
         //
     }
+
+    public function getGallery()
+    {
+        return view('pages.agenda.gallery');
+    }
 }

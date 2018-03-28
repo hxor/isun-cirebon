@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function() {
     Route::resource('agenda', 'AgendaController');
+    Route::get('agenda/gallery/upload', 'AgendaController@getGallery');
 });

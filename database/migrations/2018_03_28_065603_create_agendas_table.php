@@ -15,11 +15,11 @@ class CreateAgendasTable extends Migration
     {
         Schema::create('agendas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('about');
+            $table->string('title');
             $table->timestamp('date_start')->useCurrent();
             $table->timestamp('date_end')->useCurrent();
             $table->string('location');
-            $table->string('address');
+            $table->text('address');
             $table->string('disposition');
             $table->string('reference');
             $table->text('description');
