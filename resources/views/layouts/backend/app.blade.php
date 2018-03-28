@@ -11,6 +11,10 @@
     <link href="{{ asset('assets/backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/backend/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="{{ asset('assets/backend/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+    <!-- Responsive datatable examples -->
+    <link href="{{ asset('assets/backend/vendor/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/backend/css/sb-admin.css') }}" rel="stylesheet">
 </head>
@@ -44,8 +48,16 @@
         <script src="{{ asset('assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <!-- Core plugin JavaScript-->
         <script src="{{ asset('assets/backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+        <!-- Page level plugin JavaScript-->
+        <script src="{{ asset('assets/backend/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/backend/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+        <!-- Responsive examples -->
+        <script src="{{ asset('assets/backend/vendor/datatables/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('assets/backend/vendor/datatables/responsive.bootstrap4.min.js') }}"></script>
         <!-- Custom scripts for all pages-->
         <script src="{{ asset('assets/backend/js/sb-admin.min.js') }}"></script>
+        <!-- Custom scripts for this page-->
+        <script src="{{ asset('assets/backend/js/sb-admin-datatables.min.js') }}"></script>
     </div>
 </body>
 </html>

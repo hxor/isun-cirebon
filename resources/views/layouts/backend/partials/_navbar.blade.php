@@ -13,7 +13,7 @@
           </a>
             <ul class="sidenav-second-level collapse" id="collapseMulti">
                 <li>
-                    <a href="post-index.html">Agenda</a>
+                    <a href="{{ route('admin.agenda.index') }}">Agenda</a>
                 </li>
                 <li>
                     <a href="post-create.html">Tambah Baru New</a>
