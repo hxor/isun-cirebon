@@ -17,7 +17,7 @@
                         Upload Foto Agenda
                     </div>
                     <div class="card-body">
-                        {!! Form::open(['method' => 'POST', 'url' => '#', 'class' => 'dropzone']) !!}
+                        {!! Form::open(['method' => 'POST', 'route' => ['admin.agenda.upload.store', $agenda->id], 'class' => 'dropzone']) !!}
                         {!! Form::close() !!}
                         <hr>
                         <div class="table-responsive">
@@ -31,16 +31,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($agenda->images as $image)
                                     <tr>
-                                        <td>ID</td>
-                                        <td><img src="#" alt="" height="150" width="120"></td>
-                                        <td>Path</td>
+                                        <td>{{ $image->id }}</td>
+                                        <td><img src="{{ asset('/images/agenda/' . $image->path) }}" alt="" height="150" width="250"></td>
+                                        <td>{{ '/images/agenda/' . $image->path }}</td>
                                         <td>
-                                            {!! Form::model(['url' => '#', 'method' => 'delete']) !!}
+                                            {!! Form::model($image, ['route' => ['admin.agenda.upload.destroy', $image->id], 'method' => 'delete']) !!}
                                                 <button type="submit" class="btn waves-effect waves-light btn-outline-danger btn-sm js-submit-confirm">Delete</button>
                                             {!! Form::close() !!}
                                         </td>
-                                    </tr>                                 
+                                    </tr>
+                                    @endforeach                                         
                                 </tbody>
                             </table>
                         </div>

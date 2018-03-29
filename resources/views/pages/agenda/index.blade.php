@@ -13,7 +13,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-list"></i> Agenda
-                <a href="{{ route('admin.agenda.create') }}" class="btn btn-sm btn-primary">Add New</a>
+                <a href="{{ route('admin.agenda.create') }}" class="btn btn-sm btn-outline-primary">Add New</a>
             </div>
             <div class="card-body table-responsive">
                 <div class="table-responsive">
@@ -21,257 +21,50 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Category</th>
+                                <th>Tentang</th>
+                                <th>Lokasi</th>
+                                <th>Dari</th>
+                                <th>Sampai</th>
+                                <th>Upload</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Category</th>
+                                <th>Tentang</th>
+                                <th>Lokasi</th>
+                                <th>Dari</th>
+                                <th>Sampai</th>
+                                <th>Upload</th>
                                 <th></th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Lorem ipsum sit dolor amet</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-eye"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="padding-bottom: 0px; padding-top: 0px;">
-                          Edit
-                          <span class="btn-label btn-label-right"><i class="fa fa-edit"></i></span>
-                        </button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" style="padding-bottom: 0px; padding-top: 0px;">
-                          Show
-                          <span class="btn-label btn-label-right"><i class="fa fa-trash"></i></span>
-                        </button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
     </div>
+@endsection
+
+
+@section('scripts')
+  <script type="text/javascript">
+    $('#dataTable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('table.agenda') }}",
+        columns: [
+            {data: 'id', name: 'id'},
+            {data: 'title', name: 'title'},
+            {data: 'location', name: 'location'},
+            {data: 'date_start', name: 'date_start'},
+            {data: 'date_end', name: 'date_end'},
+            {data: 'images', name: 'images'},
+            {data: 'action', name: 'action', orderable: false, searchable: false}
+        ]
+    });
+  </script>
 @endsection

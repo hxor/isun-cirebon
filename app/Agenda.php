@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Agenda extends Model
 {
     protected $fillable = [
-        'date_start', 'date_end', 'location', 'address', 'dispotition', 'reference', 'description'
+        'title', 'date_start', 'clock_start', 'date_end', 'clock_end', 
+        'location', 'address', 'description', 'status'
     ];
 
     public function images()

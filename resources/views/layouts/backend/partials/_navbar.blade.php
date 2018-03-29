@@ -16,7 +16,7 @@
                     <a href="{{ route('admin.agenda.index') }}">Agenda</a>
                 </li>
                 <li>
-                    <a href="post-create.html">Tambah Baru New</a>
+                    <a href="{{ route('admin.agenda.create') }}">Tambah Baru</a>
                 </li>
             </ul>
         </li>
