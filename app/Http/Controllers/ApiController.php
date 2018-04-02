@@ -10,7 +10,7 @@ class ApiController extends Controller
 {
     public function index()
     {
-        $agendas = Agenda::where('status', 1)->orderBy('id', 'DESC')->limit(6)->get();
+        $agendas = Agenda::where('status', 0)->orderBy('id', 'DESC')->limit(6)->get();
         return response()->json([
             'status' => '200',
             'message' => 'List Schedule',

@@ -173,7 +173,7 @@
                         <p class="mb-5">
                             <strong>Lokasi</strong> : {{ $agenda->location }}
                             <br>
-                            <strong>Tanggal</strong> : {{ $agenda->date_start }} - {{ $agenda->date_end }}
+                            <strong>Tanggal</strong> : {{ $agenda->start_date }} - {{ $agenda->end_date }}
                         </p>
                         <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                     <i class="fa fa-close"></i>

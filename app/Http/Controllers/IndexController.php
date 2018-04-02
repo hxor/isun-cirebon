@@ -19,4 +19,12 @@ class IndexController extends Controller
         $agendas = Agenda::where('status', 0)->orderBy('id', 'ASC')->get();
         return view('schedule', compact('agendas'));
     }
+
+    public function scheduleCheck()
+    {
+        $dateNow = date('Y-m-d');
+        $agendas = Agenda::where('date_end', $dateNow)->where('status',0)->update([
+            'status' => 1
+        ]);
+    }
 }

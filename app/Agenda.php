@@ -18,15 +18,17 @@ class Agenda extends Model
 
     public function getStartDateAttribute()
     {
+        setlocale(LC_TIME, 'id_ID');
         \Carbon\Carbon::setLocale('id');
         return \Carbon\Carbon::parse($this->attributes['date_start'])
-            ->format('l, d F Y');
+            ->formatLocalized('%A, %d %B %Y');
     }
 
     public function getEndDateAttribute()
     {
+        setlocale(LC_TIME, 'id_ID');
         \Carbon\Carbon::setLocale('id');
-        return \Carbon\Carbon::parse($this->attributes['date_start'])
-            ->format('l, d F Y');
+        return \Carbon\Carbon::parse($this->attributes['date_end'])
+            ->formatLocalized('%A, %d %B %Y');
     }
 }

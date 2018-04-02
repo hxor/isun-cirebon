@@ -13,6 +13,7 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/schedule', 'IndexController@schedule');
+Route::get('/schedule/check', 'IndexController@scheduleCheck');
 
 Auth::routes();
 
