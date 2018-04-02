@@ -55,6 +55,7 @@
                             <th scope="col">Tanggal</th>
                             <th scope="col">Agenda</th>
                             <th scope="col">Lokasi</th>
+                            <th scope="col">Diposisi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,6 +72,7 @@
                                 </td>
                                 <td>{{ $agenda->title }}</td>
                                 <td>{{ $agenda->location }}</td>
+                                <td>{{ $agenda->disposition }}</td>
                             </tr>
                         @endforeach
                     </tbody>
