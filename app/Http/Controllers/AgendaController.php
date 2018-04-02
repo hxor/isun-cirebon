@@ -46,7 +46,8 @@ class AgendaController extends Controller
             'date_start' => 'required',
             'date_end' => 'required',
             'clock_start' => 'required',
-            'clock_end' => 'required'
+            'clock_end' => 'required',
+            'disposition'
         ]);
 
         // $request['date_start'] = $request->date_start . ' ' . $request->clock_start . ':00';

@@ -27,7 +27,13 @@
                             {!! Form::label('address', 'Alamat') !!}
                             {!! Form::textarea('address', null, ['class' => 'form-control', 'rows' => 5, 'required' => 'required']) !!}
                             <small class="text-danger">{{ $errors->first('address') }}</small>
-                        </div> 
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('disposition') ? ' has-error' : '' }}">
+                            {!! Form::label('disposition', 'Disposisi') !!}
+                            {!! Form::text('disposition', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                            <small class="text-danger">{{ $errors->first('disposition') }}</small>
+                        </div>
                     </div>
                 </div>
             </div>

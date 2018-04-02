@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Agenda</a>
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#portfolio">Agenda</a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
                             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#about">Tentang</a>
@@ -45,19 +45,9 @@
                 </div>
         </div>
     </nav>
-    <!-- Header -->
-    {{--  <header class="masthead bg-primary text-white text-center">
+    <section class="portfolio" id="schedule" style="padding-top: 140px;">
         <div class="container">
-            
-        </div>
-    </header>  --}}
-    <!-- Portfolio Grid Section -->
-    <section class="portfolio" id="portfolio" style="padding-top: 140px;">
-        <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Agenda</h2>
-            <hr class="star-dark mb-5">
             <div class="row">
-                {{--  @foreach ($agendas as $agenda)  --}}
                 <table class="table">
                     <thead class="thead-light">
                         <tr>
@@ -85,43 +75,10 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{--  @endforeach  --}}
             </div>
         </div>
     </section>
-    <!-- About Section -->
-    {{--  <section class="bg-primary text-white mb-0" id="about">
-        <div class="container">
-            <h2 class="text-center text-uppercase text-white">Tentang</h2>
-            <hr class="star-light mb-5">
-            <div class="row">
-                <div class="ml-auto">
-                    <p class="lead">Dinas Komunikasi Informatika dan Statistik Kota Cirebon dibentuk atas dasar Peraturan Daerah Kota Cirebon
-                        Nomor 7 Tahun 2016 tentang Pembentukan dan Susunan Perangkat Daerah dan Peraturan Walikota Cirebon
-                        Nomor 59 Tahun 2016 tentang Kedudukan, Struktur Organisasi, Tugas dan Fungsi serta Tata Kerja Dinas
-                        Komunikasi Informatika dan Statistik Kota Cirebon.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Kontak Kami</h2>
-            <hr class="star-dark mb-5">
-            <div class="row">
-                <div class="mx-auto">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <p class="lead ">Anda bisa menghubungi kami melalui kontak dan alamat di bawah ini :</p>
-                    <p class="lead"><b>Email</b> : dkis@cirebonkota.go.id</p>
-                    <p class="lead ">Alamat : Jl.Dr.Sudarsono No.40 Kel. Kesambi Kec. Kesambi 45134</p>
-                    <p class="lead ">No.Telp : (0231) 8804620 / 209324</p>
-                </div>
-            </div>
-        </div>
-    </section>  --}}
-    <!-- Footer -->
+
     <footer class="footer text-center" style="padding-top: 100px; padding-bottom: 100px;">
         <div class="container">
             <div class="row">

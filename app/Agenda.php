@@ -8,7 +8,7 @@ class Agenda extends Model
 {
     protected $fillable = [
         'title', 'date_start', 'clock_start', 'date_end', 'clock_end', 
-        'location', 'address', 'description', 'status'
+        'location', 'address', 'description', 'status', 'disposition'
     ];
 
     public function images()
