@@ -15,18 +15,4 @@ class Agenda extends Model
     {
         return $this->hasMany(AgendaGallery::class);
     }
-
-    public function getDateStartAttribute()
-    {
-        \Carbon\Carbon::setLocale('id');
-        return \Carbon\Carbon::parse($this->attributes['date_start'])
-            ->format('l, d F Y');
-    }
-
-    public function getDateEndAttribute()
-    {
-        \Carbon\Carbon::setLocale('id');
-        return \Carbon\Carbon::parse($this->attributes['date_start'])
-            ->format('l, d F Y');
-    }
 }

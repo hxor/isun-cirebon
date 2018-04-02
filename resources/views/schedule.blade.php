@@ -27,6 +27,22 @@
                     Menu
                     <i class="fa fa-bars"></i>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#portfolio">Agenda</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#about">Tentang</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#contact">Kontak</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/schedule') }}">Jadwal</a>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </nav>
     <!-- Header -->
@@ -59,9 +75,9 @@
                             <tr>
                             <th scope="row">{{ $no++ }}</th>
                                 <td>
-                                    {{ $agenda->date_start . ' ' . $agenda->clock_start }} 
+                                    {{ \Carbon\Carbon::parse($agenda->date_start) ->format('l, d F Y') . ' ' . $agenda->clock_start }} 
                                     - 
-                                    {{ $agenda->date_end . ' ' . $agenda->clock_end }}
+                                    {{ \Carbon\Carbon::parse($agenda->date_end) ->format('l, d F Y') . ' ' . $agenda->clock_end }}
                                 </td>
                                 <td>{{ $agenda->title }}</td>
                                 <td>{{ $agenda->location }}</td>
