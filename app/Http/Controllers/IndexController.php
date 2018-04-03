@@ -23,8 +23,15 @@ class IndexController extends Controller
     public function scheduleCheck()
     {
         $dateNow = date('Y-m-d');
-        $agendas = Agenda::where('date_end', $dateNow)->where('status',0)->update([
-            'status' => 1
-        ]);
+        $agendas = Agenda::where('date_end', $dateNow)->where('status',0)->get();
+        
+        foreach ($agendas as $agenda) {
+            $agenda->update([
+                'status' => 1,
+            ]);
+            $agenda->images()->create([
+                'path' => 'dkis-logo.png'
+            ]);
+        }
     }
 }
