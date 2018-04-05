@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">Agenda</a>
-            <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
+            {{-- <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
@@ -42,42 +42,34 @@
                             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/schedule') }}">Jadwal</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
         </div>
     </nav>
     <section class="portfolio" id="schedule" style="padding-top: 140px;">
         <div class="container">
-            <div class="row">
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Tanggal</th>
-                            <th scope="col">Agenda</th>
-                            <th scope="col">Lokasi</th>
-                            <th scope="col">Diposisi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                            $no = 1;
-                        @endphp
-                        @foreach ($agendas as $agenda)
-                            <tr>
-                            <th scope="row">{{ $no++ }}</th>
-                                <td>
-                                    {{ $agenda->start_date . ' ' . $agenda->clock_start }} 
-                                    - 
-                                    {{ $agenda->end_date . ' ' . $agenda->clock_end }}
-                                </td>
-                                <td>{{ $agenda->title }}</td>
-                                <td>{{ $agenda->location }}</td>
-                                <td>{{ $agenda->disposition }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+            
+
+            @foreach ($agendas as $agenda)
+            <div class="card border-info">
+                {{-- <div class="card-header text-white bg-primary">
+                    {{ $agenda->title }}
+                </div> --}}
+                <div class="card-body">
+                    <h5 class="card-title">{{ $agenda->title }}</h5>
+                    @if ($agenda->date_start == $agenda->date_end)
+                    <p class="card-text"><strong>Jadwal</strong> : {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end }}</p>
+                    @else
+                    <p class="card-text"><strong>Jadwal</strong> : {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end }}</p>
+                    @endif
+                    <p class="card-text"><strong>Lokasi</strong> : {{ $agenda->location }}</p>
+                    <p class="card-text"><strong>Alamat</strong> : {{ $agenda->address }}</p>
+                    <p class="card-text"><strong>Yang Menghadiri</strong> : {{ $agenda->disposition }}</p>
+                </div>
             </div>
+            <br>
+            @endforeach
+
+            
         </div>
     </section>
 
