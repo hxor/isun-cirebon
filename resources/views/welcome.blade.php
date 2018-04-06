@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="hxor">
-    <title>Agenda - Agenda Kepala Dinas Komunikasi Informatika Dan Statistik</title>
+    <title>Daiman - Agenda Isun Lumampah Kaleresan</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/frontend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -19,9 +19,14 @@
 </head>
 <body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 0px;padding-top: 6px;">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Agenda</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <div>
+                    <h3>Daiman</h3>
+                    <p style="font-size: 15px; font-weight: normal;">Agenda Isun Lumampah Kaleresan</p>
+                </div>
+            </a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -49,9 +54,9 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
             <img class="img-fluid mb-5 d-block mx-auto" width="256" height="256" src="{{ asset('assets/frontend/img/dkis-logo.png') }}" alt="">
-            <h1 class="text-uppercase mb-0">Buku Agenda</h1>
+            <h1 class="text-uppercase mb-0">Daiman</h1>
             <hr class="star-light">
-            <h2 class="font-weight-light mb-0">Dinas Komunikasi Informatika dan Statistik</h2>
+            <h2 class="font-weight-light mb-0">Agenda Isun Lumampah Kaleresan</h2>
         </div>
     </header>
     <!-- Portfolio Grid Section -->
@@ -138,15 +143,15 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">Tentang Lagenda</h4>
-                    <p class="lead mb-0">Lagenda adalah buku agenda dari kegiatan kepala dinas komunikasi informatika dan statistik kota cirebon.</p>
+                    <h4 class="text-uppercase mb-4">Tentang Daiman</h4>
+                    <p class="lead mb-0">Daiman adalah buku agenda dari kegiatan kepala dinas komunikasi informatika dan statistik kota cirebon.</p>
                 </div>
             </div>
         </div>
     </footer>
     <div class="copyright py-4 text-center text-white">
         <div class="container">
-            <small>Copyright &copy; Lagenda 2018</small>
+            <small>Copyright &copy; Daiman 2018</small>
         </div>
     </div>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
