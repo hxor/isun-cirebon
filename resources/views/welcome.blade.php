@@ -24,7 +24,7 @@
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <div>
                     <h3>Daiman</h3>
-                    <p style="font-size: 15px; font-weight: normal;">Agenda Isun Lumampah Kaleresan</p>
+                    <p style="font-size: 11.5px; font-weight: normal;">Agenda Isun Lumampah Kaleresan</p>
                 </div>
             </a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"

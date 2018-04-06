@@ -16,7 +16,7 @@ class IndexController extends Controller
 
     public function schedule()
     {
-        $agendas = Agenda::where('status', 0)->orderBy('id', 'ASC')->get();
+        $agendas = Agenda::where('status', 0)->orderBy('date_start', 'ASC')->orderBy('clock_start', 'ASC')->get();
         return view('schedule', compact('agendas'));
     }
 
