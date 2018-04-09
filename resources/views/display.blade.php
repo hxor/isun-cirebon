@@ -67,25 +67,25 @@
                         <th>Yang Menghadiri</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @php
-                        $no = 1;
-                    @endphp
-                    @foreach ($agendas as $agenda)
-                        <tr>
-                            <th scope="row">{{ $no++ }}</th>
-                            @if ($agenda->date_start == $agenda->date_end)
-                            <td>
-                                {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end }}
-                            </td>
-                            @else
-                            <td> {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end }}</td>
-                            @endif
-                            <td>{{ $agenda->title }}</td>
-                            <td>{{ $agenda->location }}</td>
-                            <td>{{ $agenda->address }}</td>
-                            <td>{{ $agenda->disposition }}</td>
-                        </tr>
+                <tbody id="tableslide">
+                    @php $no = 1; 
+@endphp @foreach ($agendas as $agenda)
+                    <tr>
+                        <th scope="row">{{ $no++ }}</th>
+                        @if ($agenda->date_start == $agenda->date_end)
+                        <td>
+                            {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end
+                            }}
+                        </td>
+                        @else
+                        <td> {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end
+                            }}</td>
+                        @endif
+                        <td>{{ $agenda->title }}</td>
+                        <td>{{ $agenda->location }}</td>
+                        <td>{{ $agenda->address }}</td>
+                        <td>{{ $agenda->disposition }}</td>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -114,6 +114,23 @@
     <script src="{{ asset('assets/frontend/js/contact_me.js') }}"></script>
     <!-- Custom scripts for this template -->
     <script src="{{ asset('assets/frontend/js/freelancer.min.js') }}"></script>
+    <script>
+        $(function () {
+                var selectors = [
+                    ":lt(5)",
+                    ":gt(4)"
+                ];
+                var $tableslide = $("#tableslide").children(selectors[1]).hide().end();
+                var state = false;
+                setInterval(function () {
+                    var s = state;
+                    $tableslide.children(selectors[+s]).fadeOut().promise().then(function () {
+                        $tableslide.children(selectors[+!s]).fadeIn();
+                    });
+                    state = !state;
+                }, 7000);
+            });
+    </script>
 </body>
 
 </html>
