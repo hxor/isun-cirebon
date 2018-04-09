@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +18,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/frontend/css/freelancer.min.css') }}" rel="stylesheet">
 </head>
+
 <body id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 0px;padding-top: 6px;">
@@ -27,54 +29,66 @@
                     <p style="font-size: 11.5px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
                 </div>
             </a>
-            {{-- <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            {{-- <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button"
+                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#portfolio">Agenda</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#about">Tentang</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#contact">Kontak</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/schedule') }}">Jadwal</a>
-                        </li>
-                    </ul>
-                </div> --}}
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#portfolio">Agenda</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#about">Tentang</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#contact">Kontak</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/schedule') }}">Jadwal</a>
+                    </li>
+                </ul>
+            </div> --}}
         </div>
     </nav>
     <section class="portfolio" id="schedule" style="padding-top: 140px;">
-        <div class="container">
-            
+        <div class="">
 
-            @foreach ($agendas as $agenda)
-            <div class="card border-info">
-                {{-- <div class="card-header text-white bg-primary">
-                    {{ $agenda->title }}
-                </div> --}}
-                <div class="card-body">
-                    <h5 class="card-title">{{ $agenda->title }}</h5>
-                    @if ($agenda->date_start == $agenda->date_end)
-                    <p class="card-text"><strong>Jadwal</strong> : {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end }}</p>
-                    @else
-                    <p class="card-text"><strong>Jadwal</strong> : {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end }}</p>
-                    @endif
-                    <p class="card-text"><strong>Lokasi</strong> : {{ $agenda->location }}</p>
-                    <p class="card-text"><strong>Alamat</strong> : {{ $agenda->address }}</p>
-                    <p class="card-text"><strong>Yang Menghadiri</strong> : {{ $agenda->disposition }}</p>
-                </div>
-            </div>
-            <br>
-            @endforeach
-
-            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Jadwal</th>
+                        <th>Undangan</th>
+                        <th>Lokasi</th>
+                        <th>Alamat</th>
+                        <th>Yang Menghadiri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($agendas as $agenda)
+                        <tr>
+                            <th scope="row">{{ $no++ }}</th>
+                            @if ($agenda->date_start == $agenda->date_end)
+                            <td>
+                                {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end }}
+                            </td>
+                            @else
+                            <td> {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end }}</td>
+                            @endif
+                            <td>{{ $agenda->title }}</td>
+                            <td>{{ $agenda->location }}</td>
+                            <td>{{ $agenda->address }}</td>
+                            <td>{{ $agenda->disposition }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -101,4 +115,5 @@
     <!-- Custom scripts for this template -->
     <script src="{{ asset('assets/frontend/js/freelancer.min.js') }}"></script>
 </body>
+
 </html>

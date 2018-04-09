@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="hxor">
-    <title>Daiman - Agenda Isun Lumampah Kaleresan</title>
+    <title>Isun Cirebon - Info Surat Undangan dan Kehadiran</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/frontend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -23,8 +23,8 @@
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <div>
-                    <h3>Daiman</h3>
-                    <p style="font-size: 11.5px; font-weight: normal;">Agenda Isun Lumampah Kaleresan</p>
+                    <h3>Isun Cirebon</h3>
+                    <p style="font-size: 11.5px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
                 </div>
             </a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse"
@@ -44,7 +44,7 @@
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Kontak</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/schedule') }}">Jadwal</a>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/display') }}">Jadwal</a>
                     </li>
                 </ul>
             </div>
@@ -143,15 +143,15 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">Tentang Daiman</h4>
-                    <p class="lead mb-0">Daiman adalah buku agenda dari kegiatan kepala dinas komunikasi informatika dan statistik kota cirebon.</p>
+                    <h4 class="text-uppercase mb-4">Tentang Isun Cirebon</h4>
+                    <p class="lead mb-0">Isun Cirebon adalah buku agenda dari kegiatan kepala dinas komunikasi informatika dan statistik kota cirebon.</p>
                 </div>
             </div>
         </div>
     </footer>
     <div class="copyright py-4 text-center text-white">
         <div class="container">
-            <small>Copyright &copy; Daiman 2018</small>
+            <small>Copyright &copy; Isun Cirebon 2018</small>
         </div>
     </div>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->

@@ -34,4 +34,10 @@ class IndexController extends Controller
             ]);
         }
     }
+
+    public function display()
+    {
+        $agendas = Agenda::where('status', 0)->orderBy('date_start', 'ASC')->orderBy('clock_start', 'ASC')->get();
+        return view('display', compact('agendas'));
+    }
 }
