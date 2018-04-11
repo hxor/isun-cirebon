@@ -13,73 +13,84 @@
     <link href="{{ asset('assets/frontend/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <!-- Plugin CSS -->
-    <link href="{{ asset('assets/frontend/vendor/magnific-popup/magnific-popup.css') }}" rel="stylesheet" type="text/css">
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('assets/frontend/css/freelancer.min.css') }}" rel="stylesheet">
+
+    <style>
+    body { font-family: 'helvetica'; }
+        #contain {
+            height: 500px;
+            overflow-y: scroll;
+        }
+        .top-bar {
+            background-color: #24337C;
+        }
+        .table_scroll {
+            width: 100%;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            border-collapse: collapse;
+        }
+        .table_scroll thead th {
+            padding: 10px;
+            background-color: #F1C032;
+            color: #fff;
+        }
+        .table_scroll tbody td {
+            padding: 10px;
+            /* background-color: #ed3a86; */
+            /* color: #fff; */
+        }
+        .table_header {
+            background-color: #F1C032;
+        }
+    </style>
 </head>
 
 <body id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 0px;padding-top: 6px;">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
-                <div>
-                    <h3>Isun Cirebon</h3>
-                    <p style="font-size: 11.5px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
-                </div>
-            </a>
-            {{-- <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button"
-                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                    Menu
-                    <i class="fa fa-bars"></i>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#portfolio">Agenda</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#about">Tentang</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/') }}#contact">Kontak</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ url('/schedule') }}">Jadwal</a>
-                    </li>
-                </ul>
-            </div> --}}
-        </div>
-    </nav>
-    <section class="portfolio" id="schedule" style="padding-top: 140px;">
-        <div class="">
 
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Jadwal</th>
-                        <th>Undangan</th>
-                        <th>Lokasi</th>
-                        <th>Alamat</th>
-                        <th>Yang Menghadiri</th>
-                    </tr>
-                </thead>
-                <tbody id="tableslide">
+    <div class="container-fluid">
+        <div class="row top-bar">
+            <div class="col-sm text-center">
+                <img src="{{ asset('/images/dkis-logo.png') }}" alt="" height="150" width="150">
+            </div>
+            <div class="col-sm text-center text-white">
+                <h1 style=" padding-top: 23px; ">ISUN CIREBON</h1>
+                <p style="font-size: 20px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
+            </div>
+            <div class="col-sm text-center">
+                <img src="{{ asset('/images/logo_crb.svg') }}" alt="" height="150" width="150">
+            </div>
+        </div>
+
+
+        <table class="table table-striped table_header" id="">
+            <thead class="text-white">
+                <tr>
+                    <th style="width: 47px;">#</th>
+                    <th style="width: 577px;">Hari/Tanggal</th>
+                    <th style="width: 350px;">Kegiatan</th>
+                    <th style="width: 253px;">Lokasi</th>
+                    <th style="width: 100;">Alamat</th>
+                    <th style="width: 200px;">Yang Menghadiri</th>
+                </tr>
+            </thead>
+        </table>
+
+        <div class="row" id="contain">
+            <table class="table table-striped table_scroll" id="table_scroll">
+                
+                <tbody>
                     @php $no = 1; 
-@endphp @foreach ($agendas as $agenda)
+                    @endphp 
+                    @foreach ($agendas as $agenda)
                     <tr>
                         <th scope="row">{{ $no++ }}</th>
                         @if ($agenda->date_start == $agenda->date_end)
                         <td>
-                            {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end
-                            }}
+                            {{ $agenda->start_date }} - {{ $agenda->clock_start }} s/d {{ $agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end }}
                         </td>
                         @else
-                        <td> {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end
-                            }}</td>
+                        <td> {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end }}
+                        </td>
                         @endif
                         <td>{{ $agenda->title }}</td>
                         <td>{{ $agenda->location }}</td>
@@ -90,46 +101,33 @@
                 </tbody>
             </table>
         </div>
-    </section>
+    </div>
 
-    <div class="copyright py-4 text-center text-white">
-        <div class="container">
-            <small>Copyright &copy; Isun Cirebon 2018</small>
-        </div>
-    </div>
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
-    </div>
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('assets/frontend/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- Plugin JavaScript -->
-    <script src="{{ asset('assets/frontend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-    <!-- Contact Form JavaScript -->
-    <script src="{{ asset('assets/frontend/js/jqBootstrapValidation.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/contact_me.js') }}"></script>
-    <!-- Custom scripts for this template -->
-    <script src="{{ asset('assets/frontend/js/freelancer.min.js') }}"></script>
+
     <script>
-        $(function () {
-                var selectors = [
-                    ":lt(5)",
-                    ":gt(4)"
-                ];
-                var $tableslide = $("#tableslide").children(selectors[1]).hide().end();
-                var state = false;
-                setInterval(function () {
-                    var s = state;
-                    $tableslide.children(selectors[+s]).fadeOut().promise().then(function () {
-                        $tableslide.children(selectors[+!s]).fadeIn();
-                    });
-                    state = !state;
-                }, 7000);
+        var my_time;
+        $(document).ready(function() {
+            pageScroll();
+            $("#contain").mouseover(function() {
+                clearTimeout(my_time);
+            }).mouseout(function() {
+                pageScroll();
             });
+        });
+
+        function pageScroll() {  
+            var objDiv = document.getElementById("contain");
+            objDiv.scrollTop = objDiv.scrollTop + 1;  
+            // $('p:nth-of-type(1)').html('scrollTop : '+ objDiv.scrollTop);
+            // $('p:nth-of-type(2)').html('scrollHeight : ' + objDiv.scrollHeight);
+            if (objDiv.scrollTop == 192) {
+                objDiv.scrollTop = 0;
+            }
+            my_time = setTimeout('pageScroll()', 50);
+        }
     </script>
 </body>
 

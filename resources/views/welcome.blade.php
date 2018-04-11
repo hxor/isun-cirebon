@@ -73,7 +73,11 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt="">
+                        @if ($agenda->images()->first())
+                            <img class="img-fluid" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt="">
+                        @else
+                            <img class="img-fluid mb-5" src="{{ asset('images/agenda/dkis-logo.png') }}" alt="">
+                        @endif
                     </a>
                 </div>
             @endforeach
@@ -173,7 +177,11 @@
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-secondary text-uppercase mb-0">{{ $agenda->title }}</h2>
                         <hr class="star-dark mb-5">
-                        <img class="img-fluid mb-5" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt="">
+                        @if ($agenda->images()->first())
+                            <img class="img-fluid mb-5" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt="">
+                        @else
+                            <img class="img-fluid mb-5" src="{{ asset('images/agenda/dkis-logo.png') }}" alt="">
+                        @endif
                         <p class="mb-5">{{ $agenda->description }}</p>
                         <p class="mb-5">
                             <strong>Lokasi</strong> : {{ $agenda->location }}
