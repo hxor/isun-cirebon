@@ -31,4 +31,8 @@ class Agenda extends Model
         return \Carbon\Carbon::parse($this->attributes['date_end'])
             ->formatLocalized('%A, %d %B %Y');
     }
+
+    protected $dates = [
+        'date_start', 'date_end', 'updated_at', 'created_at'
+    ];
 }

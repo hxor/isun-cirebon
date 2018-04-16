@@ -15,15 +15,16 @@ class ApiController extends Controller
         foreach ($agendas as $agenda ) {
             $data[] = [
                 'id' => $agenda->id,
-                'agenda' => $agenda->title,
-                'jadwal' => 
+                'title' => $agenda->title,
+                'date' => 
                             $agenda->date_start == $agenda->date_end
                             ? 
                             $agenda->start_date . ' - ' . $agenda->clock_start . ' s/d ' . ($agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end)
                             :
                             $agenda->start_date . ' ' . $agenda->clock_start . ' - ' . $agenda->end_date . ' ' . $agenda->clock_end,
-                'lokasi' => $agenda->location,
-                'disposisi' => $agenda->disposition
+                'location' => $agenda->location,
+                'disposition' => $agenda->disposition,
+                'date_only' => $agenda->date_start->format('d')
             ];
         }
         return response()->json([
@@ -35,25 +36,34 @@ class ApiController extends Controller
 
     public function show($id)
     {
-        $agenda = Agenda::findOrFail($id);
-        $data = [
-            'id' => $agenda->id,
-            'title' => $agenda->title,
-            'location' => $agenda->location,
-            'address' => $agenda->address,
-            'description' => $agenda->description,
-            'disposition' => $agenda->disposition,
-            'date' => $agenda->date_start == $agenda->date_end
-                ?
-                $agenda->start_date . ' - ' . $agenda->clock_start . ' s/d ' . ($agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end)
-                :
-                $agenda->start_date . ' ' . $agenda->clock_start . ' - ' . $agenda->end_date . ' ' . $agenda->clock_end,
-            'images' => $agenda->images ? $agenda->images : ''
-        ];
-        return response()->json([
-            'status' => '200',
-            'message' => 'Detail schedule id ' . $id,
-            'data' => $data
-        ]);
+        try {
+            $agenda = Agenda::where('id', $id)->firstOrFail();
+            $data = [
+                'id' => $agenda->id,
+                'title' => $agenda->title,
+                'location' => $agenda->location,
+                'address' => $agenda->address,
+                'description' => $agenda->description,
+                'disposition' => $agenda->disposition,
+                'date' => $agenda->date_start == $agenda->date_end
+                    ?
+                    $agenda->start_date . ' - ' . $agenda->clock_start . ' s/d ' . ($agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end)
+                    :
+                    $agenda->start_date . ' ' . $agenda->clock_start . ' - ' . $agenda->end_date . ' ' . $agenda->clock_end,
+                'images' => $agenda->images ? $agenda->images : ''
+            ];
+            return response()->json([
+                'status' => '200',
+                'message' => 'Detail schedule id ' . $id,
+                'data' => $data
+            ]);
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => '404',
+                'message' => $e->getMessage(),
+                'data' => ''
+            ]);
+        }
     }
 }

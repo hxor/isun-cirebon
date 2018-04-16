@@ -15,32 +15,45 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <style>
-    body { font-family: 'helvetica'; }
-        #contain {
-            height: 500px;
-            overflow-y: scroll;
-        }
+        body { font-family: 'helvetica'; }
+
         .top-bar {
             background-color: #24337C;
         }
-        .table_scroll {
+        
+        .scroll {
+            /* width: 100%; Optional */
+            /* border-collapse: collapse; */
             width: 100%;
-            margin-top: 100px;
-            margin-bottom: 100px;
-            border-collapse: collapse;
+            /* margin-top: 100px; */
+            /* margin-bottom: 100px; */
         }
-        .table_scroll thead th {
-            padding: 10px;
-            background-color: #F1C032;
-            color: #fff;
+
+        .table_header { background-color: #F1C032; }
+
+        .scroll tbody, .scroll thead { display: block; }
+
+        thead tr th { 
+            text-align: center;
         }
-        .table_scroll tbody td {
-            padding: 10px;
-            /* background-color: #ed3a86; */
-            /* color: #fff; */
+
+        #table_body {
+            height: 400px;
+            width:100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
         }
-        .table_header {
-            background-color: #F1C032;
+
+        .logo-padding {
+            padding-top: 11px;
+            padding-right: 11px;
+            padding-bottom: 11px;
+            padding-left: 11px;
+        }
+
+
+        tbody td, thead th {
+            /* width: 21.1%; Optional */
         }
     </style>
 </head>
@@ -50,35 +63,30 @@
     <div class="container-fluid">
         <div class="row top-bar">
             <div class="col-sm text-center">
-                <img src="{{ asset('/images/dkis-logo.png') }}" alt="" height="150" width="150">
+                <img class="logo-padding" src="{{ asset('/images/dkis-logo.png') }}" alt="" height="150" width="150">
             </div>
             <div class="col-sm text-center text-white">
                 <h1 style=" padding-top: 23px; ">ISUN CIREBON</h1>
                 <p style="font-size: 20px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
             </div>
             <div class="col-sm text-center">
-                <img src="{{ asset('/images/logo_crb.svg') }}" alt="" height="150" width="150">
+                <img class="logo-padding" src="{{ asset('/images/logo_crb.svg') }}" alt="" height="150" width="150">
             </div>
         </div>
 
-
-        <table class="table table-striped table_header" id="">
-            <thead class="text-white">
-                <tr>
-                    <th style="width: 47px;">#</th>
-                    <th style="width: 577px;">Hari/Tanggal</th>
-                    <th style="width: 350px;">Kegiatan</th>
-                    <th style="width: 253px;">Lokasi</th>
-                    <th style="width: 100;">Alamat</th>
-                    <th style="width: 200px;">Yang Menghadiri</th>
-                </tr>
-            </thead>
-        </table>
-
-        <div class="row" id="contain">
-            <table class="table table-striped table_scroll" id="table_scroll">
-                
-                <tbody>
+        {{-- <div class="row" id=""> --}}
+            <table class="table table-striped scroll" id="">
+                <thead class="table_header text-white">
+                    <tr>
+                        <th>#</th>
+                        <th>Hari/Tanggal</th>
+                        <th>Kegiatan</th>
+                        <th>Lokasi</th>
+                        <th>Alamat</th>
+                        <th>Yang Menghadiri</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
                     @php $no = 1; 
                     @endphp 
                     @foreach ($agendas as $agenda)
@@ -100,7 +108,7 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
+        {{-- </div> --}}
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -109,25 +117,39 @@
 
     <script>
         var my_time;
-        $(document).ready(function() {
+        pageScroll();
+        $("#table_body").mouseover(function() {
+            clearTimeout(my_time);
+        }).mouseout(function() {
             pageScroll();
-            $("#contain").mouseover(function() {
-                clearTimeout(my_time);
-            }).mouseout(function() {
-                pageScroll();
-            });
         });
 
+        var $table = $('.scroll'),
+            $bodyCells = $table.find('tbody tr:first').children(),
+            colWidth;
+
         function pageScroll() {  
-            var objDiv = document.getElementById("contain");
+            var objDiv = document.getElementById("table_body");
             objDiv.scrollTop = objDiv.scrollTop + 1;  
-            // $('p:nth-of-type(1)').html('scrollTop : '+ objDiv.scrollTop);
-            // $('p:nth-of-type(2)').html('scrollHeight : ' + objDiv.scrollHeight);
-            if (objDiv.scrollTop == 192) {
+            if (objDiv.scrollTop == (objDiv.scrollHeight - 400)) {
+
                 objDiv.scrollTop = 0;
             }
-            my_time = setTimeout('pageScroll()', 50);
+            my_time = setTimeout('pageScroll()', 80);
         }
+
+        // Adjust the width of thead cells when window resizes
+        $(window).resize(function() {
+            // Get the tbody columns width array
+            colWidth = $bodyCells.map(function() {
+                return $(this).width();
+            }).get();
+            
+            // Set the width of thead columns
+            $table.find('thead tr').children().each(function(i, v) {
+                $(v).width(colWidth[i]);
+            });    
+        }).resize(); // Trigger resize handler
     </script>
 </body>
 
