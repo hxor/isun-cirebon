@@ -22,7 +22,7 @@ class CreateAgendasTable extends Migration
             $table->string('clock_end');
             $table->string('location');
             $table->text('address');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->text('disposition');
             $table->boolean('status')->default(0);
             $table->timestamps();

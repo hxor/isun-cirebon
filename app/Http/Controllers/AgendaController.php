@@ -40,7 +40,6 @@ class AgendaController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|min:5',
-            'description' => 'required|min:15',
             'location' => 'required',
             'address' => 'required',
             'date_start' => 'required',
@@ -97,7 +96,6 @@ class AgendaController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|min:5',
-            'description' => 'required|min:15',
             'location' => 'required',
             'address' => 'required',
             'date_start' => 'required',

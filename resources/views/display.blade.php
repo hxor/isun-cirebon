@@ -22,11 +22,11 @@
         }
         
         .scroll {
-            /* width: 100%; Optional */
-            /* border-collapse: collapse; */
+             width: 100%; 
+             border-collapse: collapse; 
             width: 100%;
             /* margin-top: 100px; */
-            /* margin-bottom: 100px; */
+             margin-bottom: 100px; 
         }
 
         .table_header { background-color: #F1C032; }
@@ -44,16 +44,9 @@
             overflow-x: hidden;
         }
 
-        .logo-padding {
-            padding-top: 11px;
-            padding-right: 11px;
-            padding-bottom: 11px;
-            padding-left: 11px;
-        }
-
 
         tbody td, thead th {
-            /* width: 21.1%; Optional */
+             /*width: 21.1%; Optional */
         }
     </style>
 </head>
@@ -63,18 +56,28 @@
     <div class="container-fluid">
         <div class="row top-bar">
             <div class="col-sm text-center">
-                <img class="logo-padding" src="{{ asset('/images/dkis-logo.png') }}" alt="" height="150" width="150">
+                <img src="{{ asset('/images/dkis-logo.png') }}" alt="" height="100" width="100" style="
+    padding-top: 11px;
+    padding-right: 11px;
+    padding-bottom: 11px;
+    padding-left: 11px;
+">
             </div>
             <div class="col-sm text-center text-white">
-                <h1 style=" padding-top: 23px; ">ISUN CIREBON</h1>
+                <h2 style=" padding-top: 23px; ">ISUN CIREBON</h2>
                 <p style="font-size: 20px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
             </div>
             <div class="col-sm text-center">
-                <img class="logo-padding" src="{{ asset('/images/logo_crb.svg') }}" alt="" height="150" width="150">
+                <img src="{{ asset('/images/logo_crb.svg') }}" alt="" height="100" width="100" style="
+    padding-top: 11px;
+    padding-right: 11px;
+    padding-bottom: 11px;
+    padding-left: 11px;
+">
             </div>
         </div>
 
-        {{-- <div class="row" id=""> --}}
+        <div class="row" id="">
             <table class="table table-striped scroll" id="">
                 <thead class="table_header text-white">
                     <tr>
@@ -100,7 +103,10 @@
                         <td> {{ $agenda->start_date . ' ' . $agenda->clock_start }} - {{ $agenda->end_date . ' ' . $agenda->clock_end }}
                         </td>
                         @endif
-                        <td>{{ $agenda->title }}</td>
+                        <td>
+                            <strong>{{ $agenda->title }}</strong>
+                            <div style="font-size: 11px">{{ $agenda->description }}</div>
+                        </td>
                         <td>{{ $agenda->location }}</td>
                         <td>{{ $agenda->address }}</td>
                         <td>{{ $agenda->disposition }}</td>
@@ -108,7 +114,7 @@
                     @endforeach
                 </tbody>
             </table>
-        {{-- </div> --}}
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -132,7 +138,6 @@
             var objDiv = document.getElementById("table_body");
             objDiv.scrollTop = objDiv.scrollTop + 1;  
             if (objDiv.scrollTop == (objDiv.scrollHeight - 400)) {
-
                 objDiv.scrollTop = 0;
             }
             my_time = setTimeout('pageScroll()', 80);

@@ -13,7 +13,7 @@
 
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             {!! Form::label('description', 'Uraian') !!}
-                            {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => 5, 'required' => 'required']) !!}
+                            {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => 5]) !!}
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </div>
 
