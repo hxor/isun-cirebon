@@ -10,7 +10,7 @@ class ApiController extends Controller
 {
     public function index()
     {
-        $agendas = Agenda::where('status', 0)->orderBy('id', 'DESC')->limit(6)->get();
+        $agendas = Agenda::where('status', 0)->orderBy('date_start', 'ASC')->orderBy('clock_start', 'ASC')->get();
         $data = [];
         foreach ($agendas as $agenda ) {
             $data[] = [
@@ -43,7 +43,7 @@ class ApiController extends Controller
                 'title' => $agenda->title,
                 'location' => $agenda->location,
                 'address' => $agenda->address,
-                'description' => $agenda->description,
+                'description' => $agenda->description ? $agenda->description : '',
                 'disposition' => $agenda->disposition,
                 'date' => $agenda->date_start == $agenda->date_end
                     ?

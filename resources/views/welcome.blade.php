@@ -54,9 +54,9 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container">
             <img class="img-fluid mb-5 d-block mx-auto" width="256" height="256" src="{{ asset('assets/frontend/img/dkis-logo.png') }}" alt="">
-            <h1 class="text-uppercase mb-0">Daiman</h1>
+            <h1 class="text-uppercase mb-0">Isun Cirebon</h1>
             <hr class="star-light">
-            <h2 class="font-weight-light mb-0">Agenda Isun Lumampah Kaleresan</h2>
+            <h2 class="font-weight-light mb-0">Info Surat Undangan dan Kehadiran</h2>
         </div>
     </header>
     <!-- Portfolio Grid Section -->
@@ -65,22 +65,23 @@
             <h2 class="text-center text-uppercase text-secondary mb-0">Agenda</h2>
             <hr class="star-dark mb-5">
             <div class="row">
-            @foreach ($agendas as $agenda)
-                <div class="col-md-6 col-lg-4">
-                    <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-{{ $agenda->id }}">
-                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                                <i class="fa fa-search-plus fa-3x"></i>
+             @if ($agendas)
+                @foreach ($agendas as $agenda)
+                    <div class="col-md-6 col-lg-4">
+                        <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-{{ $agenda->id }}">
+                            <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                    <i class="fa fa-search-plus fa-3x"></i>
+                                </div>
                             </div>
-                        </div>
-                        @if ($agenda->images()->first())
-                            <img class="img-fluid" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt="">
-                        @else
-                            <img class="img-fluid mb-5" src="{{ asset('images/agenda/dkis-logo.png') }}" alt="">
-                        @endif
-                    </a>
-                </div>
-            @endforeach
+                            @php
+                                $a = $agenda->images->first()
+                            @endphp
+                            <img class="img-fluid" src="{{ asset('images/agenda/' . $a['path']) }}" alt="">
+                        </a>
+                    </div>
+                @endforeach
+             @endif
             </div>
         </div>
     </section>
@@ -177,11 +178,7 @@
                     <div class="col-lg-8 mx-auto">
                         <h2 class="text-secondary text-uppercase mb-0">{{ $agenda->title }}</h2>
                         <hr class="star-dark mb-5">
-                        @if ($agenda->images()->first())
-                            <img class="img-fluid mb-5" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt="">
-                        @else
-                            <img class="img-fluid mb-5" src="{{ asset('images/agenda/dkis-logo.png') }}" alt="">
-                        @endif
+                        {{-- <img class="img-fluid mb-5" src="{{ asset('images/agenda/' . $agenda->images()->first()->path) }}" alt=""> --}}
                         <p class="mb-5">{{ $agenda->description }}</p>
                         <p class="mb-5">
                             <strong>Lokasi</strong> : {{ $agenda->location }}

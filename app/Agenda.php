@@ -10,6 +10,10 @@ class Agenda extends Model
         'title', 'date_start', 'clock_start', 'date_end', 'clock_end', 
         'location', 'address', 'description', 'status', 'disposition'
     ];
+    
+    protected $dates = [
+        'date_start', 'date_end', 'updated_at', 'created_at'
+    ];
 
     public function images()
     {
@@ -31,8 +35,4 @@ class Agenda extends Model
         return \Carbon\Carbon::parse($this->attributes['date_end'])
             ->formatLocalized('%A, %d %B %Y');
     }
-
-    protected $dates = [
-        'date_start', 'date_end', 'updated_at', 'created_at'
-    ];
 }

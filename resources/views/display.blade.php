@@ -56,7 +56,7 @@
     <div class="container-fluid">
         <div class="row top-bar">
             <div class="col-sm text-center">
-                <img src="{{ asset('/images/dkis-logo.png') }}" alt="" height="100" width="100" style="
+                <img src="{{ asset('/images/logo_crb.svg') }}" alt="" height="100" width="100" style="
     padding-top: 11px;
     padding-right: 11px;
     padding-bottom: 11px;
@@ -64,11 +64,11 @@
 ">
             </div>
             <div class="col-sm text-center text-white">
-                <h2 style=" padding-top: 23px; ">ISUN CIREBON</h2>
+                <h2 style=" padding-top: 8px; ">ISUN CIREBON</h2>
                 <p style="font-size: 20px; font-weight: normal;">Info Surat Undangan dan Kehadiran</p>
             </div>
             <div class="col-sm text-center">
-                <img src="{{ asset('/images/logo_crb.svg') }}" alt="" height="100" width="100" style="
+                <img src="{{ asset('/images/dkis-logo.png') }}" alt="" height="100" width="100" style="
     padding-top: 11px;
     padding-right: 11px;
     padding-bottom: 11px;
