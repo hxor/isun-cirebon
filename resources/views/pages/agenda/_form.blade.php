@@ -17,6 +17,12 @@
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </div>
 
+                        <div class="form-group{{ $errors->has('organizer') ? ' has-error' : '' }}">
+                            {!! Form::label('organizer', 'Penyelenggara') !!}
+                            {!! Form::text('organizer', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                            <small class="text-danger">{{ $errors->first('organizer') }}</small>
+                        </div>
+
                         <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
                             {!! Form::label('location', 'Lokasi') !!}
                             {!! Form::text('location', null, ['class' => 'form-control', 'required' => 'required']) !!}
@@ -33,6 +39,12 @@
                             {!! Form::label('disposition', 'Disposisi') !!}
                             {!! Form::text('disposition', null, ['class' => 'form-control', 'required' => 'required']) !!}
                             <small class="text-danger">{{ $errors->first('disposition') }}</small>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('uniform') ? ' has-error' : '' }}">
+                            {!! Form::label('uniform', 'Seragam') !!}
+                            {!! Form::text('uniform', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                            <small class="text-danger">{{ $errors->first('uniform') }}</small>
                         </div>
                     </div>
                 </div>

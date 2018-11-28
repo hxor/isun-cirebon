@@ -16,14 +16,16 @@ class ApiController extends Controller
             $data[] = [
                 'id' => $agenda->id,
                 'title' => $agenda->title,
+                'organizer' => $agenda->organizer,
+                'location' => $agenda->location,
+                'disposition' => $agenda->disposition,
+                'uniform' => $agenda->uniform,
                 'date' => 
                             $agenda->date_start == $agenda->date_end
                             ? 
                             $agenda->start_date . ' - ' . $agenda->clock_start . ' s/d ' . ($agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end)
                             :
                             $agenda->start_date . ' ' . $agenda->clock_start . ' - ' . $agenda->end_date . ' ' . $agenda->clock_end,
-                'location' => $agenda->location,
-                'disposition' => $agenda->disposition,
                 'date_only' => $agenda->date_start->format('d')
             ];
         }
@@ -44,7 +46,9 @@ class ApiController extends Controller
                 'location' => $agenda->location,
                 'address' => $agenda->address,
                 'description' => $agenda->description ? $agenda->description : '',
+                'organizer' => $agenda->organizer,
                 'disposition' => $agenda->disposition,
+                'uniform' => $agenda->uniform,
                 'date' => $agenda->date_start == $agenda->date_end
                     ?
                     $agenda->start_date . ' - ' . $agenda->clock_start . ' s/d ' . ($agenda->clock_end == '00:00' ? 'Selesai' : $agenda->clock_end)
