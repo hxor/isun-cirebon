@@ -106,6 +106,8 @@
                         <td>
                             <strong>{{ $agenda->title }}</strong>
                             <div style="font-size: 11px">{{ $agenda->description }}</div>
+                            <div style="font-size: 11px"><strong>Penyelenggara:</strong> {{ $agenda->organizer }}</div>
+                            <div style="font-size: 11px"><strong>Seragam:</strong> {{ $agenda->uniform }}</div>
                         </td>
                         <td>{{ $agenda->location }}</td>
                         <td>{{ $agenda->address }}</td>
