@@ -135,7 +135,7 @@ class AgendaController extends Controller
      */
     public function dataTable()
     {
-        $agenda = Agenda::query();
+        $agenda = Agenda::orderBy('id', 'DESC');
         return Datatables::of($agenda)
             ->addColumn('date_start', function ($agenda) {
                 return $agenda->date_start . ' ' . $agenda->clock_start;
