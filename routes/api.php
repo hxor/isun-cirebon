@@ -19,3 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('schedule', 'ApiController@index');
 Route::get('schedule/{id}', 'ApiController@show');
+
+Route::get('archive', 'ApiController@archive');
+Route::get('archive/year', 'ApiController@getYearAgenda');
+Route::get('archive/month/{year}', 'ApiController@getMonthAgenda');
+Route::get('archive/month/{month}/year/{year}', 'ApiController@getArchiveAgenda');
